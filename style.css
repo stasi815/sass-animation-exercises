@@ -85,11 +85,27 @@ body {
   transition: 200ms;
 }
 
+.box-2 {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  border: 1px solid;
+  transition: 200ms;
+}
+
+.box-3 {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  border: 1px solid;
+  transition: 200ms;
+}
+
 .b1-1 {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: translate(20px, 25px) rotate(0);
+  transform: translate(20px, 25px);
   transition: 200ms;
 }
 
@@ -97,7 +113,7 @@ body {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: translate(20px, 35px) rotate(0);
+  transform: translate(20px, 35px);
   transition: 200ms;
 }
 
@@ -105,7 +121,7 @@ body {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: translate(20px, 45px) rotate(0);
+  transform: translate(20px, 45px);
   transition: 200ms;
 }
 
@@ -134,19 +150,11 @@ body {
   height: 0px;
 }
 
-.box-2 {
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  border: 1px solid;
-  transition: 200ms;
-}
-
 .b2-1 {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: translate(20px, 25px) rotate(0);
+  transform: translate(20px, 25px);
   transition: 200ms;
 }
 
@@ -154,7 +162,7 @@ body {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: scale(1, 1) translate(20px, 35px) rotate(0);
+  transform: translate(20px, 35px);
   transition: 200ms;
 }
 
@@ -162,7 +170,7 @@ body {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: translate(20px, 45px) rotate(0);
+  transform: translate(20px, 45px);
   transition: 200ms;
 }
 
@@ -194,19 +202,11 @@ body {
   position: absolute;
 }
 
-.box-3 {
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  border: 1px solid;
-  transition: 200ms;
-}
-
 .b3-1 {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: translate(20px, 25px) rotate(0);
+  transform: translate(20px, 25px);
   transition: 200ms;
 }
 
@@ -214,7 +214,7 @@ body {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: translate(20px, 35px) rotate(0);
+  transform: translate(20px, 35px);
   transition: 200ms;
 }
 
@@ -222,7 +222,7 @@ body {
   width: 60px;
   height: 10px;
   background-color: black;
-  transform: translate(20px, 45px) rotate(0);
+  transform: translate(20px, 45px);
   transition: 200ms;
 }
 
@@ -271,19 +271,6 @@ body {
   font-family: Helvetica;
 }
 
-.domo1 > img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0.75) rotate(0);
-  transition: 600ms;
-  transition-timing-function: ease-in-out;
-}
-
-.domo1:hover > img {
-  transform: translate(-50%, -50%) scale(1) rotate(14deg);
-}
-
 .domo2 {
   width: 220px;
   height: 225px;
@@ -292,35 +279,6 @@ body {
   margin: 1rem;
   overflow: hidden;
   font-family: Helvetica;
-}
-
-.domo2 > img {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0.75) rotate(0);
-  transition: 600ms;
-  transition-timing-function: ease-in-out;
-}
-
-.domo2:hover > img {
-  transform: translate(-50%, -50%) scale(1) rotate(14deg);
-}
-
-.domo2 > h3 {
-  position: absolute;
-  background-color: white;
-  padding: 1rem 2rem;
-  right: -200px;
-  bottom: 0;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
-  transition: 600ms;
-  transition-delay: 200ms;
-  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.domo2:hover > h3 {
-  right: -20px;
 }
 
 .domo3 {
@@ -333,6 +291,24 @@ body {
   font-family: Helvetica;
 }
 
+.domo1 > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.75) rotate(0);
+  transition: 600ms;
+  transition-timing-function: ease-in-out;
+}
+
+.domo2 > img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.75) rotate(0);
+  transition: 600ms;
+  transition-timing-function: ease-in-out;
+}
+
 .domo3 > img {
   position: absolute;
   left: 50%;
@@ -342,20 +318,54 @@ body {
   transition-timing-function: ease-in-out;
 }
 
+.domo1:hover > img {
+  transform: translate(-50%, -50%) scale(1) rotate(14deg);
+}
+
+.domo2:hover > img {
+  transform: translate(-50%, -50%) scale(1) rotate(14deg);
+}
+
 .domo3:hover > img {
   transform: translate(-50%, -50%) scale(1) rotate(14deg);
+}
+
+.domo2 > h3 {
+  position: absolute;
+  background-color: white;
+  padding: 1rem 2rem;
+  bottom: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
+  transition: 600ms;
+  transition-delay: 200ms;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .domo3 > h3 {
   position: absolute;
   background-color: white;
   padding: 1rem 2rem;
-  right: -20px;
   bottom: 0;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
   transition: 600ms;
   transition-delay: 200ms;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.domo2 > h3 {
+  right: -200px;
+}
+
+.domo2:hover > h3 {
+  right: -20px;
+}
+
+.domo3 > h3 {
+  right: -20px;
+}
+
+.domo3:hover > h3 {
+  right: -220px;
 }
 
 .domo3 > p {
@@ -376,10 +386,6 @@ body {
   transition-timing-function: ease-in-out;
   transition-delay: 100ms;
   transform: translate(-100px, -100px) scale(0.5);
-}
-
-.domo3:hover > h3 {
-  right: -220px;
 }
 
 .domo3:hover > p {

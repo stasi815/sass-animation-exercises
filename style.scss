@@ -1,3 +1,15 @@
+$button-bg: rgb(0, 143, 190);
+$button-fg: white;
+$button-margin: 1rem;
+$button-padding: 1rem;
+$box-bg: black;
+$box-fg: white;
+$box-line-height: 10px;
+$button-transition: 350ms;
+$transition-timing-function: ease-in-out;
+$button-font-size: 20px;
+$standard-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
 body, html {
     height: 100%;
 }
@@ -20,56 +32,54 @@ body {
 }
 
 .button-1 {
-    padding: 1rem;
-    margin: 1rem;
+    padding: $button-padding;
+    margin: $button-margin;
     border: 2px solid;
     border-radius: 0.5rem;
-    font-size: 20px;
-    color: white;
-    background-color: rgb(0, 143, 190);
-    transition: 350ms;
-
+    font-size: $button-font-size;
+    color: $button-fg;
+    background-color: $button-bg;
+    transition: $button-transition;
 }
 
 .button-1:hover {
-    color: rgb(0, 143, 190);
-    background-color: white;
+    color: $button-bg;
+    background-color: $button-fg;
 }
 
 .button-2 {
-    padding: 1rem;
-    margin: 1rem;
+    padding: $button-padding;
+    margin: $button-margin;
     border: none;
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
-    font-size: 20px;
-    background-color: white;
-    color: rgb(0, 143, 190);
-    transition: 350ms;
+    font-size: $button-font-size;
+    background-color: $button-fg;
+    color: $button-bg;
+    transition: $button-transition;
 
 }
 
 .button-2:hover {
-    border-top: 4px solid rgb(0, 143, 190);
-    border-bottom: 4px solid rgb(0, 143, 190);
+    border-top: 4px solid $button-bg;
+    border-bottom: 4px solid $button-bg;
     letter-spacing: .25rem;
 }
 
 .button-3 {
-    padding: 1rem;
-    margin: 1rem;
+    padding: $button-padding;
+    margin: $button-margin;
     border: 2px solid;
     border-radius: 0.5rem;
-    font-size: 20px;
-    background-color: white;
-    color: rgb(0, 143, 190);
-    transition: 350ms;
-
+    font-size: $button-font-size;
+    background-color: $button-fg;
+    color: $button-bg;
+    transition: $button-transition;
 }
 
 .button-3:hover {
-    background-color: rgb(0, 143, 190);
-    color: white;
+    background-color: $button-bg;
+    color: $button-fg;
 }
 
 .box-div {
@@ -80,54 +90,42 @@ body {
     align-items: center;
 }
 
-.box-1 {
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-    border: 1px solid;
-    transition: 200ms;
+@for $i from 1 through 3 {
+    .box-#{$i} {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        border: 1px solid;
+        transition: 200ms;
+    }
 }
 
-.b1-1 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: translate(20px, 25px) rotate(0);
-    transition: 200ms;
-}
-
-.b1-2 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: translate(20px, 35px) rotate(0);
-    transition: 200ms;
-}
-
-.b1-3 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: translate(20px, 45px) rotate(0);
-    transition: 200ms;
+@for $i from 1 through 3 {
+    .b1-#{$i} {
+        width: 60px;
+        height: $box-line-height;
+        background-color: $box-bg;
+        transform: translate(20px, #{$i * 10 + 15}px);
+        transition: 200ms;
+    }
 }
 
 .box-1:hover {
-    background-color: black;
+    background-color: $box-bg;
 }
 
 .box-1:hover > .b1-1 {
     width: 60px;
-    height: 10px;
-    background-color: white;
+    height: $box-line-height;
+    background-color: $box-fg;
     transform: translate(20px, 45px)rotate(-45deg);
     position: absolute;
 }
 
 .box-1:hover > .b1-2 {
-    width: 10px;
+    width: $box-line-height;
     height: 60px;
-    background-color: white;
+    background-color: $box-fg;
     transform: translate(45px, 20px)rotate(-45deg);
     position: absolute;
 }
@@ -137,114 +135,70 @@ body {
     height: 0px;
 }
 
-.box-2 {
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-    border: 1px solid;
-    transition: 200ms;
-}
-
-.b2-1 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: translate(20px, 25px) rotate(0);
-    transition: 200ms;
-}
-
-.b2-2 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: scale(1,1) translate(20px, 35px) rotate(0);
-    transition: 200ms;
-}
-
-.b2-3 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: translate(20px, 45px) rotate(0);
-    transition: 200ms;
+@for $i from 1 through 3 {
+    .b2-#{$i} {
+        width: 60px;
+        height: $box-line-height;
+        background-color: $box-bg;
+        transform: translate(20px, #{$i * 10 + 15}px);
+        transition: 200ms;
+    }
 }
 
 .box-2:hover {
-    background-color: black;
+    background-color: $box-bg;
 }
 
 .box-2:hover > .b2-1 {
     width: 60px;
-    height: 10px;
-    background-color: white;
+    height: $box-line-height;
+    background-color: $box-fg;
     transform: translate(20px, 45px);
     position: absolute;
 }
 
 .box-2:hover > .b2-2 {
     width: 53px;
-    height: 10px;
-    background-color: white;
+    height: $box-line-height;
+    background-color: $box-fg;
     transform: translate(10px, 30px) rotate(-45deg);
     position: absolute;
 }
 
 .box-2:hover > .b2-3 {
     width: 53px;
-    height: 10px;
-    background-color: white;
+    height: $box-line-height;
+    background-color: $box-fg;
     transform: translate(10px, 60px) rotate(45deg);
     position: absolute;
 }
 
-.box-3 {
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-    border: 1px solid;
-    transition: 200ms;
-}
-
-.b3-1 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: translate(20px, 25px) rotate(0);
-    transition: 200ms;
-}
-
-.b3-2 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: translate(20px, 35px) rotate(0);
-    transition: 200ms;
-}
-
-.b3-3 {
-    width: 60px;
-    height: 10px;
-    background-color: black;
-    transform: translate(20px, 45px) rotate(0);
-    transition: 200ms;
+@for $i from 1 through 3 {
+    .b3-#{$i} {
+        width: 60px;
+        height: $box-line-height;
+        background-color: $box-bg;
+        transform: translate(20px, #{$i * 10 + 15}px);
+        transition: 200ms;
+    }
 }
 
 .box-3:hover {
-    background-color: black;
+    background-color: $box-bg;
 }
 
 .box-3:hover > .b3-1 {
     width: 50px;
-    height: 10px;
-    background-color: white;
+    height: $box-line-height;
+    background-color: $box-fg;
     transform: translate(25px, 45px)rotate(-45deg);
     position: absolute;
 }
 
 .box-3:hover > .b3-2 {
-    width: 10px;
+    width: $box-line-height;
     height: 50px;
-    background-color: white;
+    background-color: $box-fg;
     transform: translate(45px, 25px)rotate(-45deg);
     position: absolute;
 }
@@ -253,7 +207,7 @@ body {
     width: 60px;
     height: 60px;
     background-color: transparent;
-    border: 10px solid white;
+    border: 10px solid $box-fg;
     border-radius: 50%;
     transform: translate(10px, 10px);
 }
@@ -264,101 +218,62 @@ body {
     align-items: center;
 }
 
-.domo1 {
-    width: 220px;
-    height: 225px;
-    position: relative;
-    border: 1px solid;
-    margin: 1rem;
-    overflow: hidden;
-    font-family: Helvetica;
+@for $i from 1 through 3 {
+    .domo#{$i} {
+        width: 220px;
+        height: 225px;
+        position: relative;
+        border: 1px solid;
+        margin: 1rem;
+        overflow: hidden;
+        font-family: Helvetica;
+    }
 }
 
-.domo1 > img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.75) rotate(0);
-    transition: 600ms;
-    transition-timing-function: ease-in-out;
+@for $i from 1 through 3 {
+    .domo#{$i} > img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0.75) rotate(0);
+        transition: 600ms;
+        transition-timing-function: $transition-timing-function;
+    }
 }
 
-.domo1:hover > img {
-    transform: translate(-50%, -50%) scale(1.0) rotate(14deg);
+@for $i from 1 through 3 {
+    .domo#{$i}:hover > img {
+        transform: translate(-50%, -50%) scale(1.0) rotate(14deg);
+    }
 }
 
-.domo2 {
-    width: 220px;
-    height: 225px;
-    position: relative;
-    border: 1px solid;
-    margin: 1rem;
-    overflow: hidden;
-    font-family: Helvetica;
+@for $i from 2 through 3 {
+    .domo#{$i} > h3 {
+        position: absolute;
+        background-color: $box-fg;
+        padding: 1rem 2rem;
+        bottom: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
+        transition: 600ms;
+        transition-delay: 200ms;
+        transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    }
 }
 
-.domo2 > img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.75) rotate(0);
-    transition: 600ms;
-    transition-timing-function: ease-in-out;
-}
-
-.domo2:hover > img {
-    transform: translate(-50%, -50%) scale(1.0) rotate(14deg);
-}
-
-.domo2 > h3 {
-    position: absolute;
-    background-color: white;
-    padding: 1rem 2rem;
+.domo2 > h3{
     right: -200px;
-    bottom: 0;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
-    transition: 600ms;
-    transition-delay: 200ms;
-    transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
 }
 
 .domo2:hover > h3 {
     right: -20px;
 }
 
-.domo3 {
-    width: 220px;
-    height: 225px;
-    position: relative;
-    border: 1px solid;
-    margin: 1rem;
-    overflow: hidden;
-    font-family: Helvetica;
-}
-
-.domo3 > img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(0.75) rotate(0);
-    transition: 600ms;
-    transition-timing-function: ease-in-out;
-}
-
-.domo3:hover > img {
-    transform: translate(-50%, -50%) scale(1.0) rotate(14deg);
-}
-
 .domo3 > h3 {
-    position: absolute;
-    background-color: white;
-    padding: 1rem 2rem;
     right: -20px;
-    bottom: 0;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 5% 50%);
-    transition: 600ms;
-    transition-delay: 200ms;
-    transition-timing-function: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+}
+
+.domo3:hover > h3 {
+    right: -220px;
 }
 
 .domo3 > p {
@@ -369,20 +284,16 @@ body {
     left: -14px;
     top: -14px;
     background-color: rgb(244, 93, 93);
-    color: white;
+    color: $box-fg;
     font-size: 24px;
     line-height: 100px;
     margin: 0;
     text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: $standard-font-family;
     transition: 600ms;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: $transition-timing-function;
     transition-delay: 100ms;
     transform: translate(-100px, -100px) scale(0.5);
-}
-
-.domo3:hover > h3 {
-    right: -220px;
 }
 
 .domo3:hover > p {
